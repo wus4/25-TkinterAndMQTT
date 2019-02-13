@@ -2,12 +2,13 @@
 
 import mqtt_remote_method_calls as com
 import time
-
+#receiver constanlty runs in the background, then passess to the delegate, the sender doesn't have a delegate
 
 class DelegateThatReceives(object):
 
-    def say_it(self, message):
-        print("Message received!", message)
+    def say_it(self, message,n,who):
+        for k in range (n):
+            print(who,"sent", message)
 
 
 def main():
